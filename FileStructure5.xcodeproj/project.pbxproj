@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C18F4EA41D0580990087FD9E /* function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C18F4EA31D0580990087FD9E /* function.cpp */; };
 		C1EC4CB21D057DA80043EE27 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4CB11D057DA80043EE27 /* main.cpp */; };
+		C1EC4CBE1D057F330043EE27 /* Student.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4CBD1D057F330043EE27 /* Student.cpp */; };
+		C1EC4CC11D057FF20043EE27 /* IOBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4CC01D057FF20043EE27 /* IOBuffer.cpp */; };
+		C1EC4CC31D0580430043EE27 /* FixedFieldBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4CC21D0580430043EE27 /* FixedFieldBuffer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +27,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C18F4EA31D0580990087FD9E /* function.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = function.cpp; sourceTree = "<group>"; };
 		C1EC4CAE1D057DA80043EE27 /* FileStructure5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FileStructure5; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1EC4CB11D057DA80043EE27 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C1EC4CB91D057E670043EE27 /* Buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buffer.h; sourceTree = "<group>"; };
+		C1EC4CBA1D057EC00043EE27 /* classType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = classType.h; sourceTree = "<group>"; };
+		C1EC4CBC1D057EF70043EE27 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		C1EC4CBD1D057F330043EE27 /* Student.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Student.cpp; sourceTree = "<group>"; };
+		C1EC4CBF1D057FB50043EE27 /* FixedFieldBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixedFieldBuffer.h; sourceTree = "<group>"; };
+		C1EC4CC01D057FF20043EE27 /* IOBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOBuffer.cpp; sourceTree = "<group>"; };
+		C1EC4CC21D0580430043EE27 /* FixedFieldBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FixedFieldBuffer.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +69,33 @@
 		C1EC4CB01D057DA80043EE27 /* FileStructure5 */ = {
 			isa = PBXGroup;
 			children = (
+				C1EC4CBB1D057EE50043EE27 /* Student */,
+				C1EC4CB81D057E3A0043EE27 /* Buffer */,
 				C1EC4CB11D057DA80043EE27 /* main.cpp */,
+				C1EC4CBA1D057EC00043EE27 /* classType.h */,
+				C18F4EA31D0580990087FD9E /* function.cpp */,
 			);
 			path = FileStructure5;
+			sourceTree = "<group>";
+		};
+		C1EC4CB81D057E3A0043EE27 /* Buffer */ = {
+			isa = PBXGroup;
+			children = (
+				C1EC4CB91D057E670043EE27 /* Buffer.h */,
+				C1EC4CBF1D057FB50043EE27 /* FixedFieldBuffer.h */,
+				C1EC4CC01D057FF20043EE27 /* IOBuffer.cpp */,
+				C1EC4CC21D0580430043EE27 /* FixedFieldBuffer.cpp */,
+			);
+			name = Buffer;
+			sourceTree = "<group>";
+		};
+		C1EC4CBB1D057EE50043EE27 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				C1EC4CBC1D057EF70043EE27 /* Student.h */,
+				C1EC4CBD1D057F330043EE27 /* Student.cpp */,
+			);
+			name = Student;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1EC4CB21D057DA80043EE27 /* main.cpp in Sources */,
+				C1EC4CBE1D057F330043EE27 /* Student.cpp in Sources */,
+				C1EC4CC11D057FF20043EE27 /* IOBuffer.cpp in Sources */,
+				C18F4EA41D0580990087FD9E /* function.cpp in Sources */,
+				C1EC4CC31D0580430043EE27 /* FixedFieldBuffer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +279,7 @@
 				C1EC4CB71D057DA80043EE27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
