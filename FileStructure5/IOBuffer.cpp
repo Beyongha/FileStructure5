@@ -52,32 +52,21 @@ void IOBuffer::Clear() { this->Offset = 0; }
 
 void IOBuffer::WriteHeader(ostream& os) {
     int instBufferSize = 5;
-    char instBuffer[instBufferSize];
+    os.width(instBufferSize); os.fill('\0'); os << left << classType;
     
-    memset(instBuffer, '\0', instBufferSize);
-    strcpy(instBuffer, intToString(classType));
-    os.write(instBuffer, instBufferSize);
-    
-    cout << instBuffer << endl;
-    
-    memset(instBuffer, '\0', instBufferSize);
-    strcpy(instBuffer, intToString(MaxSize));
-    
-    cout << instBuffer << endl;
-    
-    os.write(instBuffer, instBufferSize);
+    os.width(instBufferSize); os.fill('\0'); os << left << MaxSize;
 }
 void IOBuffer::ReadHeader(istream& is) {
     int instBufferSize = 5;
-    char instBuffer[instBufferSize];
+    char inst[instBufferSize];
     
-    memset(instBuffer, '\0', instBufferSize);
-    is.read(instBuffer, instBufferSize);
-    this->classType = static_cast<ClassType>(atoi(instBuffer));
+    is.read(inst, instBufferSize);
+    classType = static_cast<ClassType>(atoi(inst));
     
-    memset(instBuffer, '\0', instBufferSize);
-    is.read(instBuffer, instBufferSize);
-    this->MaxSize = atoi(instBuffer);
+    is.read(inst, instBufferSize);
+    MaxSize = atoi(inst);
+    
+    SetBuffer(MaxSize);
 }
 
 
@@ -106,6 +95,14 @@ void IOBuffer::ValidateInput(const int Value) {
     /* Check if Value is negative */
     assert((Value >= 0) && "Value is Zero");
 }
+
+/* Getter */
+char* IOBuffer::GetBuffer() const { return this->Buffer; }
+int IOBuffer::GetMaxSize() const { return this->MaxSize; }
+int IOBuffer::GetOffset() const { return this->Offset; }
+
+ClassType IOBuffer::GetClassType() const { return this->classType; }
+
 
 IOBuffer::~IOBuffer() {
     // 왜 SIGABRT가 뜨는지 모르겠음.

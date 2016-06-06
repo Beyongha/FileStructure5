@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C18F4EA41D0580990087FD9E /* function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C18F4EA31D0580990087FD9E /* function.cpp */; };
+		C18F4EA61D0595CD0087FD9E /* TestStudent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C18F4EA51D0595CD0087FD9E /* TestStudent.cpp */; };
 		C1EC4CB21D057DA80043EE27 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4CB11D057DA80043EE27 /* main.cpp */; };
 		C1EC4CBE1D057F330043EE27 /* Student.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4CBD1D057F330043EE27 /* Student.cpp */; };
 		C1EC4CC11D057FF20043EE27 /* IOBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1EC4CC01D057FF20043EE27 /* IOBuffer.cpp */; };
@@ -28,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		C18F4EA31D0580990087FD9E /* function.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = function.cpp; sourceTree = "<group>"; };
+		C18F4EA51D0595CD0087FD9E /* TestStudent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestStudent.cpp; sourceTree = "<group>"; };
+		C18F4EA71D0597CD0087FD9E /* DelimFieldBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelimFieldBuffer.h; sourceTree = "<group>"; };
 		C1EC4CAE1D057DA80043EE27 /* FileStructure5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FileStructure5; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1EC4CB11D057DA80043EE27 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C1EC4CB91D057E670043EE27 /* Buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buffer.h; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 				C1EC4CBF1D057FB50043EE27 /* FixedFieldBuffer.h */,
 				C1EC4CC01D057FF20043EE27 /* IOBuffer.cpp */,
 				C1EC4CC21D0580430043EE27 /* FixedFieldBuffer.cpp */,
+				C18F4EA71D0597CD0087FD9E /* DelimFieldBuffer.h */,
 			);
 			name = Buffer;
 			sourceTree = "<group>";
@@ -94,6 +98,7 @@
 			children = (
 				C1EC4CBC1D057EF70043EE27 /* Student.h */,
 				C1EC4CBD1D057F330043EE27 /* Student.cpp */,
+				C18F4EA51D0595CD0087FD9E /* TestStudent.cpp */,
 			);
 			name = Student;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				C1EC4CC11D057FF20043EE27 /* IOBuffer.cpp in Sources */,
 				C18F4EA41D0580990087FD9E /* function.cpp in Sources */,
 				C1EC4CC31D0580430043EE27 /* FixedFieldBuffer.cpp in Sources */,
+				C18F4EA61D0595CD0087FD9E /* TestStudent.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,6 +35,7 @@ FixedFieldBuffer::FixedFieldBuffer(int _fieldSize, int _maxNumberOfField)
 : IOBuffer(_fieldSize * _maxNumberOfField){
     SetFieldSize(_fieldSize);
     SetMaxNumberOfField(_maxNumberOfField);
+    SetClassType(FIXEDFIELDBUFFER);
 }
 FixedFieldBuffer::FixedFieldBuffer() : IOBuffer() {}
 
@@ -73,6 +74,7 @@ int FixedFieldBuffer::Unpack(int& Value){
     return 1;
 }
 
+
 void FixedFieldBuffer::Write(ostream& os){
     WriteHeader(os);
     
@@ -88,29 +90,22 @@ void FixedFieldBuffer::WriteHeader(ostream& os) {
     IOBuffer::WriteHeader(os);
     
     int instBufferSize = 5;
-    char instBuffer[instBufferSize];
+    os.width(instBufferSize); os.fill('\0'); os << left << FieldSize;
     
-    memset(instBuffer, '\0', instBufferSize);
-    strcpy(instBuffer, intToString(FieldSize));
-    os.write(instBuffer, FieldSize);
-    
-    memset(instBuffer, '\0', instBufferSize);
-    strcpy(instBuffer, intToString(MaxNumberOfField));
-    os.write(instBuffer, FieldSize);
+    os.width(instBufferSize); os.fill('\0'); os << left << MaxNumberOfField;
 }
 void FixedFieldBuffer::ReadHeader(istream& is) {
     IOBuffer::ReadHeader(is);
     
     int instBufferSize = 5;
-    char instBuffer[instBufferSize];
+    char inst[instBufferSize];
     
-    memset(instBuffer, '\0', instBufferSize);
-    is.read(instBuffer, instBufferSize);
-    this->FieldSize = atoi(instBuffer);
+    is.read(inst, instBufferSize);
+    this->FieldSize = atoi(inst);
     
-    memset(instBuffer, '\0', instBufferSize);
-    is.read(instBuffer, instBufferSize);
-    this->MaxNumberOfField = atoi(instBuffer);
+    is.read(inst, instBufferSize);
+    this->MaxNumberOfField = atoi(inst);
+    
 }
 
 int FixedFieldBuffer::GetFieldSize(){ return this->FieldSize; }
