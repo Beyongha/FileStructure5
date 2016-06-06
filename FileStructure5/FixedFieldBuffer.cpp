@@ -37,7 +37,9 @@ FixedFieldBuffer::FixedFieldBuffer(int _fieldSize, int _maxNumberOfField)
     SetMaxNumberOfField(_maxNumberOfField);
     SetClassType(FIXEDFIELDBUFFER);
 }
-FixedFieldBuffer::FixedFieldBuffer() : IOBuffer() {}
+FixedFieldBuffer::FixedFieldBuffer() : IOBuffer() {
+    SetClassType(FIXEDFIELDBUFFER);
+}
 
 
 int FixedFieldBuffer::Pack(const char* String){
@@ -108,6 +110,19 @@ void FixedFieldBuffer::ReadHeader(istream& is) {
     
 }
 
+/* Validator */
+void FixedFieldBuffer::ValidateInput(const int MaxSize, const char* Field) {
+    IOBuffer::ValidateInput(MaxSize, Field);
+}
+void FixedFieldBuffer::ValidateInput(const int MaxValue, const int Value){
+    IOBuffer::ValidateInput(MaxValue, Value);
+}
+void FixedFieldBuffer::ValidateInput(const int Value) {
+    IOBuffer::ValidateInput(Value);
+}
+
+
+/* Getter */
 int FixedFieldBuffer::GetFieldSize(){ return this->FieldSize; }
 int FixedFieldBuffer::GetMaxNumberOfField(){ return this->MaxNumberOfField; }
 

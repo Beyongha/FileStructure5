@@ -7,14 +7,14 @@
 #include <iostream>
 
 
+
 class DelimFieldBuffer : public IOBuffer {
 protected:
-    const char* Delim;		// delimiter를 지정.
-    
-    void setDelim(char* newDelim);
+    const char* Delim = "|";
 public:
     /* Constructor */
-    DelimFieldBuffer(int, const char*);
+    DelimFieldBuffer(int);
+    DelimFieldBuffer();
     
     /* Virtual functions */
     int Pack(const char*);          // 문자열을 pack함
@@ -23,8 +23,8 @@ public:
     int Unpack(char*, int);         // 문자열을 unpack함
     int Unpack(int&);				// 수를 unpack함
     
-    void Write(ostream&);           // 파일이든 표준출력이든, ostream에 바이트를 씀. 다형성 지원
-    void Read(istream&);            // 파일이든 표준입력이든, istream에 바이트를 씀. 다형성 지원
+    void Write(ostream&);           // 파일에 씀.
+    void Read(istream&);            // 파일에서 읽어옴.
     
     void Clear();
     
@@ -33,6 +33,12 @@ public:
     
     /* getter */
     const char* GetDelim() const;
+    
+    /* Validator */
+    void ValidateInput(const int, const char*);
+    void ValidateInput(const int, const int);   // 정수의 범위를 검증함.
+    void ValidateInput(const int);
+
     
     /* Destuctor */
     ~DelimFieldBuffer();

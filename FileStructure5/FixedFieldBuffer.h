@@ -37,6 +37,11 @@ public:
     void WriteHeader(ostream&);
     void ReadHeader(istream&);
     
+    /*  Validator */
+    void ValidateInput(const int, const char*);
+    void ValidateInput(const int, const int);   // 정수의 범위를 검증함.
+    void ValidateInput(const int);
+
     
     /* Getter */
     int GetFieldSize();

@@ -7,12 +7,16 @@
 
 using namespace std;
 
+/* FixedFieldBuffer test using Student instances */
 void FFBSaveStudentInstance();
 void FFBLoadStudentInstance();
 
+/* DelimFieldBuffer test using Student instances */
+void DFBSaveStudentInstance();
+void DFBLoadStudentInstance();
 
 int main() {
-    FFBSaveStudentInstance();
-
-    FFBLoadStudentInstance();
+    DFBSaveStudentInstance();
+    
+    DFBLoadStudentInstance();
 }
