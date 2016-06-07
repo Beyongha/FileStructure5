@@ -71,7 +71,7 @@ int DelimFieldBuffer::DPack(const char* String, int Address) {
     /* 문제점: 이렇게 하면 한 필드가 2개로 쪼개지거나, 다른 필드를 침범할 가능성이 있음.
         밀거나 당기거나 해줘야 하는데 어떻게?
         설마 insert인가? 설마 이걸 구현해야 하는가? ㅅㅂ
-     */
+    */
     
     
     return 1;

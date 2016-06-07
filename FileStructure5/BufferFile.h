@@ -11,7 +11,7 @@
 
 class BufferFile {
 protected:
-    ClassType ClassType;
+    ClassType classType;
     
     IOBuffer& Buffer;
     fstream File;
@@ -20,7 +20,7 @@ protected:
     
     
     void SetName(const char* _name);
-    void SetClassType(enum ClassType _classType);
+    void SetClassType(ClassType _classType);
 public:
     BufferFile(IOBuffer& _buffer);
     
@@ -35,7 +35,10 @@ public:
     /* Getter */
     const IOBuffer& GetBuffer() const;
     const char* GetFileName() const;
-    const enum ClassType GetClassType() const;
+    const ClassType GetClassType() const;
+    
+    /* Validator */
+    int IsFileOpened(fstream&);
     
     /* Destructor */
     ~BufferFile();
