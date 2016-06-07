@@ -30,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		79F7B4531D069A44005156D6 /* RecordFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordFile.h; sourceTree = "<group>"; };
 		C18F4EA31D0580990087FD9E /* function.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = function.cpp; sourceTree = "<group>"; };
 		C18F4EA51D0595CD0087FD9E /* TestStudent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestStudent.cpp; sourceTree = "<group>"; };
 		C18F4EA71D0597CD0087FD9E /* DelimFieldBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelimFieldBuffer.h; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 			children = (
 				C18F4EAC1D05BF0D0087FD9E /* BufferFile.h */,
 				C18F4EAD1D05CA650087FD9E /* BufferFile.cpp */,
+				79F7B4531D069A44005156D6 /* RecordFile.h */,
 			);
 			name = BufferFile;
 			sourceTree = "<group>";
