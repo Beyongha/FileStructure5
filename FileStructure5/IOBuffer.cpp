@@ -46,7 +46,9 @@ IOBuffer::IOBuffer(int _maxSize) {
     SetClassType(IOBUFFER);
     
 }
-IOBuffer::IOBuffer() { }
+IOBuffer::IOBuffer() {
+    SetOffset(0);
+}
 
 void IOBuffer::Clear() { this->Offset = 0; }
 

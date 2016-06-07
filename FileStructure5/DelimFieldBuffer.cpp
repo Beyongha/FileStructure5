@@ -108,15 +108,21 @@ int DelimFieldBuffer::DUnpack(int& Value, int Address){
 }
 
 void DelimFieldBuffer::Write(ostream& os){
-    DelimFieldBuffer::WriteHeader(os);
-    
     os.write(this->Buffer, this->MaxSize);
 }
 void DelimFieldBuffer::Read(istream& is){
-    DelimFieldBuffer::ReadHeader(is);
-    
     is.read(this->Buffer, this->MaxSize);
 }
+
+void DelimFieldBuffer::DWrite(ostream& os, int Address) {
+    ValidateInput(MaxSize, Address);
+    os.write(this->Buffer + Address, this->MaxSize - Address);
+}
+void DelimFieldBuffer::DRead(istream& is, int Address) {
+    ValidateInput(MaxSize, Address);
+    is.read(this->Buffer + Address, this->MaxSize - Address);
+}
+
 
 void DelimFieldBuffer::Clear(){ IOBuffer::Clear(); }
 

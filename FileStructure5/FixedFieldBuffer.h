@@ -34,6 +34,10 @@ public:
     void Write(ostream&);
     void Read(istream&);
     
+    virtual void DWrite(ostream&, int);
+    virtual void DRead(istream&, int);
+    
+    
     int DPack(const char*, int);
     int DPack(const int&, int);
     

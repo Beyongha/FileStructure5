@@ -37,16 +37,20 @@ BufferFile::BufferFile(IOBuffer& _buffer)
     SetClassType(BUFFERFILE);
 }
 
-int BufferFile::Open(char* _name) {
-    assert(!strcmp(_name, "") && "_name is null");
+int BufferFile::Open(const char* _name) {
+    assert(strcmp(_name, "") && "_name is null");
     
     File.open(_name, ios::in);
+    
+    Buffer.ReadHeader(File);
     return 1;
 }
-int BufferFile::Create(char* _name) {
-    assert(!strcmp(_name, "") && "_name is null");
+int BufferFile::Create(const char* _name) {
+    assert(strcmp(_name, "") && "_name is null");
     
     File.open(_name, ios::out | ios::trunc);
+    
+    Buffer.WriteHeader(File);
     return 1;
 }
 int BufferFile::Close() {
@@ -57,29 +61,43 @@ int BufferFile::Close() {
     else return 0;
 }
 int BufferFile::rewind() {
-    /* rewind에 대한 정확한 정의가 필요함.
-     Buffer를 rewind 할 것인가
-     File을 rewind할 것인가.
-     */
+    IsFileOpened(File);
+    
+    File.seekp(0, ios::beg);
+    File.seekp(0, ios::beg);
     
     return 1;
 }
-int BufferFile::Read() {
-    if(IsFileOpened(File)) {
+
+/* 내가 Read, Write에 대해 편견을 가지고 있었음.
+ Open할 때 FileStream을 가지고 있고, Buffer는 외부에서 record를 따로 받을 수 있음.
+ */
+
+int BufferFile::Read(int Address) {
+    IsFileOpened(File);
+    if( Address == -1 ) {
         Buffer.Read(File);
-        return 1;
+        return -1;
+    } else {
+        Buffer.DRead(File, Address);
+        return Address;
     }
-    else return 0;
 }
-int BufferFile::Write() {
-    if(IsFileOpened(File)) {
+int BufferFile::Write(int Address) {
+    IsFileOpened(File);
+    if( Address == -1 ) {
         Buffer.Write(File);
-        return 1;
+        return -1;
+    } else {
+        Buffer.DWrite(File, Address);
+        return Address;
     }
-    else return 0;
 }
 int BufferFile::Append() {
-    /* 이부분도 문제임. Record를 넣는건 알겠는데 무슨 Record를? */
+    File.seekp(0, ios::end);
+    
+    /* 버퍼에 있는 것들을 file에 씀 */
+    Buffer.Write(File);
     return 1;
 }
 

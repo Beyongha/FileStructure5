@@ -112,15 +112,21 @@ int FixedFieldBuffer::DUnpack(int& Value, int Address){
 
 
 void FixedFieldBuffer::Write(ostream& os){
-    WriteHeader(os);
-    
     os.write(this->Buffer, this->MaxSize);
 }
 void FixedFieldBuffer::Read(istream& is){
-    ReadHeader(is);
-    
     is.read(this->Buffer, this->MaxSize);
 }
+
+void FixedFieldBuffer::DWrite(ostream& os, int Address) {
+    ValidateInput(MaxSize, Address);
+    os.write(this->Buffer + Address, this->MaxSize - Address);
+}
+void FixedFieldBuffer::DRead(istream& is, int Address) {
+    ValidateInput(MaxSize, Address);
+    is.read(this->Buffer + Address, this->MaxSize -Address);
+}
+
 
 void FixedFieldBuffer::WriteHeader(ostream& os) {
     IOBuffer::WriteHeader(os);

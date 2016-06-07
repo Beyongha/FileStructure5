@@ -15,7 +15,16 @@ void FFBLoadStudentInstance();
 void DFBSaveStudentInstance();
 void DFBLoadStudentInstance();
 
+/* BufferFile test using Student instances */
+void FFBBufferFileSaveStudentInstance();
+void FFBBufferFileLoadStudentInstance();
+
+void DFBBufferFileSaveStudentInstance();
+void DFBBufferFileLoadStudentInstance();
+
 int main() {
     cout << "Hello!" << endl;
+    FFBBufferFileSaveStudentInstance();
     
+    FFBBufferFileLoadStudentInstance();
 }

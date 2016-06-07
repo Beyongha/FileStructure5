@@ -26,6 +26,9 @@ public:
     void Write(ostream&);           // 파일에 씀.
     void Read(istream&);            // 파일에서 읽어옴.
     
+    virtual void DWrite(ostream&, int);
+    virtual void DRead(istream&, int);
+    
     int DPack(const char*, int);
     int DPack(const int&, int);
     

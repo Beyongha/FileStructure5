@@ -19,18 +19,18 @@ protected:
     // header
     
     
-    void SetName(const char* _name);
-    void SetClassType(ClassType _classType);
+    void SetName(const char*);
+    void SetClassType(ClassType);
 public:
-    BufferFile(IOBuffer& _buffer);
+    BufferFile(IOBuffer&);
     
-    virtual int Open(char* _name);
-    virtual int Create(char* _name);
-    virtual int Close();
-    virtual int rewind();
-    virtual int Read();
-    virtual int Write();
-    virtual int Append(/* record */);
+    int Open(const char*);
+    int Create(const char*);
+    int Close();
+    int rewind();
+    int Read(int Address = -1);
+    int Write(int Address = -1);
+    int Append(/* record? -> NO */);
 
     /* Getter */
     const IOBuffer& GetBuffer() const;

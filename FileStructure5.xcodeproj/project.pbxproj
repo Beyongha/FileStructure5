@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C110A0D01D074B9C00D7AAD5 /* TestBufferFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0CF1D074B9C00D7AAD5 /* TestBufferFile.cpp */; };
 		C18F4EA41D0580990087FD9E /* function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C18F4EA31D0580990087FD9E /* function.cpp */; };
 		C18F4EA61D0595CD0087FD9E /* TestStudent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C18F4EA51D0595CD0087FD9E /* TestStudent.cpp */; };
 		C18F4EA91D05A27F0087FD9E /* DelimFieldBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C18F4EA81D05A27F0087FD9E /* DelimFieldBuffer.cpp */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		79F7B4531D069A44005156D6 /* RecordFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordFile.h; sourceTree = "<group>"; };
+		C110A0CF1D074B9C00D7AAD5 /* TestBufferFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestBufferFile.cpp; sourceTree = "<group>"; };
 		C18F4EA31D0580990087FD9E /* function.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = function.cpp; sourceTree = "<group>"; };
 		C18F4EA51D0595CD0087FD9E /* TestStudent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestStudent.cpp; sourceTree = "<group>"; };
 		C18F4EA71D0597CD0087FD9E /* DelimFieldBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelimFieldBuffer.h; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				C18F4EAC1D05BF0D0087FD9E /* BufferFile.h */,
 				C18F4EAD1D05CA650087FD9E /* BufferFile.cpp */,
 				79F7B4531D069A44005156D6 /* RecordFile.h */,
+				C110A0CF1D074B9C00D7AAD5 /* TestBufferFile.cpp */,
 			);
 			name = BufferFile;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C110A0D01D074B9C00D7AAD5 /* TestBufferFile.cpp in Sources */,
 				C1EC4CB21D057DA80043EE27 /* main.cpp in Sources */,
 				C18F4EAE1D05CA650087FD9E /* BufferFile.cpp in Sources */,
 				C1EC4CBE1D057F330043EE27 /* Student.cpp in Sources */,

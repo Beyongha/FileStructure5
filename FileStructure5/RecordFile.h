@@ -18,7 +18,8 @@ using namespace std;
 
 template <class Record>
 class RecordFile : BufferFile {
-    
+public:
+    int Read(
 };
 
 #endif /* RecordFile_h */

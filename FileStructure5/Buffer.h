@@ -44,11 +44,18 @@ public:
     virtual void Write(ostream&) = 0;           // 파일이든 표준출력이든, ostream에 바이트를 씀. 다형성 지원
     virtual void Read(istream&) = 0;            // 파일이든 표준입력이든, istream에 바이트를 씀. 다형성 지원
     
-    virtual int DPack(const char*, int) = 0;
-    virtual int DPack(const int&, int) = 0;
+    /* DWrite, DRead 필요. 이게 필드를 쓰고 읽는게 아니라 ostream, istream 에 offset부터 처리하는거임.*/
+    virtual void DWrite(ostream&, int) = 0;
+    virtual void DRead(istream&, int) = 0;
     
-    virtual int DUnpack(char*, int, int) = 0;
-    virtual int DUnpack(int&, int) = 0;
+    //virtual int DPack(const char*, int) = 0;
+    //virtual int DPack(const int&, int) = 0;
+    
+    //virtual int DUnpack(char*, int, int) = 0;
+    //virtual int DUnpack(int&, int) = 0;
+    
+    
+    
     
     virtual void Clear();
     
