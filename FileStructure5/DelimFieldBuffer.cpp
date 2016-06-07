@@ -53,7 +53,6 @@ int DelimFieldBuffer::Unpack(char* Field, int FieldSize){
     }
     Field[i] = '\0';
     
-    
     return 1;
 }
 int DelimFieldBuffer::Unpack(int& Value){
@@ -64,18 +63,48 @@ int DelimFieldBuffer::Unpack(int& Value){
     return 1;
 }
 
-void DelimFieldBuffer::DPack(const char*, int) {
+int DelimFieldBuffer::DPack(const char* String, int Address) {
+    ValidateInput(this->MaxSize, String);
     
+    strcpy(this->Buffer + Address, String);
+    strcpy(this->Buffer + Address + strlen(String), Delim);
+    /* 문제점: 이렇게 하면 한 필드가 2개로 쪼개지거나, 다른 필드를 침범할 가능성이 있음.
+        밀거나 당기거나 해줘야 하는데 어떻게?
+        설마 insert인가? 설마 이걸 구현해야 하는가? ㅅㅂ
+     */
+    
+    
+    return 1;
 }
-void DelimFieldBuffer::DPack(const int&, int){
-    
+int DelimFieldBuffer::DPack(const int& Value, int Address){
+    return DelimFieldBuffer::DPack(intToString(Value), Address);
 }
 
-void DelimFieldBuffer::DUnpack(char*, int){
+int DelimFieldBuffer::DUnpack(char* Field, int FieldSize, int Address){
+    ValidateInput(MaxSize, FieldSize);
+    ValidateInput(MaxSize, Address);
     
+    int i;
+    for(i = 0; i < FieldSize ; ++ i, Address += 1) {
+        if(this->Buffer[Address] != *Delim ) {
+            Field[i] = this->Buffer[Address];
+        }
+        else {
+            Address += 1;
+            break;
+        }
+    }
+    Field[i] = '\0';
+    
+    return 1;
 }
-void DelimFieldBuffer::DUnpack(int&, int){
+int DelimFieldBuffer::DUnpack(int& Value, int Address){
+    char* numBuffer = new char[this->MaxSize];
+    DelimFieldBuffer::DUnpack(numBuffer, this->MaxSize, Address);
     
+    Value = atoi(numBuffer);
+    delete[] numBuffer;
+    return 1;
 }
 
 void DelimFieldBuffer::Write(ostream& os){

@@ -34,11 +34,11 @@ public:
     void Write(ostream&);
     void Read(istream&);
     
-    void DPack(const char*, int);
-    void DPack(const int&, int);
+    int DPack(const char*, int);
+    int DPack(const int&, int);
     
-    void DUnpack(char*, int);
-    void DUnpack(int&, int);
+    int DUnpack(char*, int, int);
+    int DUnpack(int&, int);
     
     void WriteHeader(ostream&);
     void ReadHeader(istream&);

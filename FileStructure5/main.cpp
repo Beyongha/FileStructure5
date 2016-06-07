@@ -16,5 +16,6 @@ void DFBSaveStudentInstance();
 void DFBLoadStudentInstance();
 
 int main() {
-    cout << "It work!" << endl;
+    cout << "Hello!" << endl;
+    
 }

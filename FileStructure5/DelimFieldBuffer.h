@@ -26,11 +26,11 @@ public:
     void Write(ostream&);           // 파일에 씀.
     void Read(istream&);            // 파일에서 읽어옴.
     
-    virtual void DPack(const char*, int);
-    virtual void DPack(const int&, int);
+    int DPack(const char*, int);
+    int DPack(const int&, int);
     
-    virtual void DUnpack(char*, int);
-    virtual void DUnpack(int&, int);
+    int DUnpack(char*, int, int);
+    int DUnpack(int&, int);
     
     void Clear();
     

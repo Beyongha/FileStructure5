@@ -76,18 +76,37 @@ int FixedFieldBuffer::Unpack(int& Value){
     return 1;
 }
 
-void FixedFieldBuffer::DPack(const char*, int) {
+int FixedFieldBuffer::DPack(const char* String, int Address) {
+    ValidateInput(FieldSize, String);
+    ValidateInput(MaxSize, Address);
     
+    memset(this->Buffer + Address, '\0', FieldSize - (Address % FieldSize));
+    strncpy(this->Buffer + Address, String, FieldSize - (Address % FieldSize));
+    return 1;
 }
-void FixedFieldBuffer::DPack(const int&, int){
-    
+int FixedFieldBuffer::DPack(const int& Value, int Address){
+    ValidateInput(MaxSize, Address);
+    return FixedFieldBuffer::DPack(intToString(Value), Address);
 }
 
-void FixedFieldBuffer::DUnpack(char*, int){
+int FixedFieldBuffer::DUnpack(char* Field, int EmptyFieldSize, int Address){
+    /* Check */
+    ValidateInput(FieldSize, EmptyFieldSize);
+    ValidateInput(MaxSize, Address);
     
+    memset(Field, '\0', EmptyFieldSize);
+    strncpy(Field, this->Buffer + Address, this->FieldSize - (Address % FieldSize));
+    
+    return 1;
 }
-void FixedFieldBuffer::DUnpack(int&, int){
+int FixedFieldBuffer::DUnpack(int& Value, int Address){
+    ValidateInput(MaxSize, Address);
+    char* numBuffer = new char[this->FieldSize - (Address % FieldSize)];
+    FixedFieldBuffer::DUnpack(numBuffer, FieldSize - (Address % FieldSize), Address);
     
+    Value = atoi(numBuffer);
+    delete[] numBuffer;
+    return 1;
 }
 
 
