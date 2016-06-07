@@ -34,8 +34,16 @@ public:
     void Write(ostream&);
     void Read(istream&);
     
+    void DPack(const char*, int);
+    void DPack(const int&, int);
+    
+    void DUnpack(char*, int);
+    void DUnpack(int&, int);
+    
     void WriteHeader(ostream&);
     void ReadHeader(istream&);
+    
+    void Clear();
     
     /*  Validator */
     void ValidateInput(const int, const char*);

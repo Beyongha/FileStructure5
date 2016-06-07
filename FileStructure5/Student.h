@@ -26,7 +26,7 @@ enum StudentClassEntry { STUDENTID = 0, STUDENTNAME, ADDRESS, DATE, CREDIT, NUMO
 
 class Student {
 protected:
-    ClassType classType = STUDENT;
+    ClassType classType;
     
     /* 멤버 변수들 */
     char StudentID[StudentFieldSize];            /* 학번 */
@@ -41,6 +41,7 @@ protected:
     int SetAddress(const char*);
     int SetAdmissionYear(const int);
     int SetCredit(const int);
+    int SetClassType(ClassType _classType);
 public:
     /* Constructors */
     Student(const char*, const char*, const char*, const int, const int);

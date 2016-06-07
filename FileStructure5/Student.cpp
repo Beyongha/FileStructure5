@@ -43,7 +43,10 @@ int Student::SetCredit      (const int _Credit) {
     this->Credit = _Credit;
     return 1;
 }
-
+int Student::SetClassType            (ClassType _classType) {
+    this->classType = _classType;
+    return 1;
+}
 /* Constructors */
 Student::Student(const char* _StudentID, const char* _Name, const char* _Address, const int _AdmissionYear, const int _Credit) {
     SetStudentID    (_StudentID);
@@ -51,6 +54,7 @@ Student::Student(const char* _StudentID, const char* _Name, const char* _Address
     SetAddress      (_Address);
     SetAdmissionYear(_AdmissionYear);
     SetCredit       (_Credit);
+    SetClassType    (STUDENT);
 }
 Student::Student(const Student& _Student) {
     SetStudentID    (_Student.StudentID);
@@ -58,8 +62,9 @@ Student::Student(const Student& _Student) {
     SetAddress      (_Student.Address);
     SetAdmissionYear(_Student.AdmissionYear);
     SetCredit       (_Student.Credit);
+    SetClassType    (STUDENT);
 }
-Student::Student() {}
+Student::Student() { SetClassType (STUDENT); }
 
 /* Operator overloading */
 Student& Student::operator = (const Student& _Student) {
@@ -68,7 +73,6 @@ Student& Student::operator = (const Student& _Student) {
     SetAddress      (_Student.Address);
     SetAdmissionYear(_Student.AdmissionYear);
     SetCredit       (_Student.Credit);
-    
     return *this;
 }
 bool    Student::operator == (const Student& _Student) {

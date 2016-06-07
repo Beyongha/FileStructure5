@@ -26,6 +26,12 @@ public:
     void Write(ostream&);           // 파일에 씀.
     void Read(istream&);            // 파일에서 읽어옴.
     
+    virtual void DPack(const char*, int);
+    virtual void DPack(const int&, int);
+    
+    virtual void DUnpack(char*, int);
+    virtual void DUnpack(int&, int);
+    
     void Clear();
     
     void WriteHeader(ostream&);

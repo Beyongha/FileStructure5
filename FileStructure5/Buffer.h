@@ -44,10 +44,18 @@ public:
     virtual void Write(ostream&) = 0;           // 파일이든 표준출력이든, ostream에 바이트를 씀. 다형성 지원
     virtual void Read(istream&) = 0;            // 파일이든 표준입력이든, istream에 바이트를 씀. 다형성 지원
     
+    virtual void DPack(const char*, int) = 0;
+    virtual void DPack(const int&, int) = 0;
+    
+    virtual void DUnpack(char*, int) = 0;
+    virtual void DUnpack(int&, int) = 0;
+    
     virtual void Clear();
     
     virtual void WriteHeader(ostream&);
     virtual void ReadHeader(istream&);
+    
+    
     
     /* Getter */
     char* GetBuffer() const;                // 버퍼 포인터를 상수로 리턴.

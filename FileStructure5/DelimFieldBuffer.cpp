@@ -63,7 +63,21 @@ int DelimFieldBuffer::Unpack(int& Value){
     Value = atoi(numBuffer);
     return 1;
 }
+
+void DelimFieldBuffer::DPack(const char*, int) {
     
+}
+void DelimFieldBuffer::DPack(const int&, int){
+    
+}
+
+void DelimFieldBuffer::DUnpack(char*, int){
+    
+}
+void DelimFieldBuffer::DUnpack(int&, int){
+    
+}
+
 void DelimFieldBuffer::Write(ostream& os){
     DelimFieldBuffer::WriteHeader(os);
     
@@ -75,7 +89,7 @@ void DelimFieldBuffer::Read(istream& is){
     is.read(this->Buffer, this->MaxSize);
 }
 
-void DelimFieldBuffer::Clear(){ this->Offset = 0; }
+void DelimFieldBuffer::Clear(){ IOBuffer::Clear(); }
 
 /* Getter */
 const char* DelimFieldBuffer::GetDelim() const { return this->Delim; }

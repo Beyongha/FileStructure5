@@ -76,6 +76,21 @@ int FixedFieldBuffer::Unpack(int& Value){
     return 1;
 }
 
+void FixedFieldBuffer::DPack(const char*, int) {
+    
+}
+void FixedFieldBuffer::DPack(const int&, int){
+    
+}
+
+void FixedFieldBuffer::DUnpack(char*, int){
+    
+}
+void FixedFieldBuffer::DUnpack(int&, int){
+    
+}
+
+
 
 void FixedFieldBuffer::Write(ostream& os){
     WriteHeader(os);
@@ -109,6 +124,8 @@ void FixedFieldBuffer::ReadHeader(istream& is) {
     this->MaxNumberOfField = atoi(inst);
     
 }
+
+void FixedFieldBuffer::Clear() { IOBuffer::Clear(); }
 
 /* Validator */
 void FixedFieldBuffer::ValidateInput(const int MaxSize, const char* Field) {
