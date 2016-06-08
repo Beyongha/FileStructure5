@@ -5,17 +5,23 @@
 #include <iostream>
 #include <fstream>
 
-Student std1 = Student("201424546", "JIN", "geyongnam", 14, 85);
-Student std2 = Student("111122222", "HA", "pusan", 11, 112);
-Student std3 = Student("123453213", "LEE", "geumjung", 12, 123);
 
-Student std4 = Student();
-Student std5 = Student();
-Student std6 = Student();
+/* instancaes in StudentInstance.cpp */
+extern Student std1;
+extern Student std2;
+extern Student std3;
+
+extern Student std4;
+extern Student std5;
+extern Student std6;
+
+/* instancaes in BufferInstance.cpp */
+extern FixedFieldBuffer fb;
+extern DelimFieldBuffer db;
 
 
 void FFBSaveStudentInstance() {
-    FixedFieldBuffer fb(StudentFieldSize, NUMOFSTUDENTMEMBER * 3);
+    
     std1.Pack(fb);
     std2.Pack(fb);
     std3.Pack(fb);
@@ -29,8 +35,7 @@ void FFBSaveStudentInstance() {
 void FFBLoadStudentInstance() {
     ifstream file;
     file.open("student.txt", ios::in);
-    
-    FixedFieldBuffer fb;
+
     fb.Read(file);
     
     std4.Unpack(fb);
@@ -43,7 +48,7 @@ void FFBLoadStudentInstance() {
 }
 
 void DFBSaveStudentInstance() {
-    DelimFieldBuffer db(1024);
+    
     std1.Pack(db);
     std2.Pack(db);
     std3.Pack(db);
@@ -58,7 +63,6 @@ void DFBLoadStudentInstance() {
     ifstream file;
     file.open("student.txt", ios::in);
     
-    DelimFieldBuffer db;
     db.Read(file);
     
     std4.Unpack(db);

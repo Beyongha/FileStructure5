@@ -29,6 +29,11 @@ void FFBRecordFileLoadStudentInstance();
 void DFBRecordFileSaveStudentInstance();
 void DFBRecordFileLoadStudentInstance();
 
+
+/* TextIndex test using Student instances */
+void FFBTestTextIndex();
+
+
 int main() {
-    cout << "Main" << endl;
+    FFBTestTextIndex();
 }

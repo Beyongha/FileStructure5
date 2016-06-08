@@ -12,6 +12,8 @@ using namespace std;
 
 char* intToString(int);
 
+
+
 /* Constructor */
 DelimFieldBuffer::DelimFieldBuffer(int _MaxSize)
 : IOBuffer(_MaxSize) {

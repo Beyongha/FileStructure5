@@ -10,6 +10,10 @@
 		C110A0D01D074B9C00D7AAD5 /* TestBufferFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0CF1D074B9C00D7AAD5 /* TestBufferFile.cpp */; };
 		C110A0D21D0809FE00D7AAD5 /* RecordFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0D11D0809FE00D7AAD5 /* RecordFile.cpp */; };
 		C110A0D41D080B6A00D7AAD5 /* TestRecordFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0D31D080B6A00D7AAD5 /* TestRecordFile.cpp */; };
+		C110A0DF1D083B1E00D7AAD5 /* TextIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0DE1D083B1E00D7AAD5 /* TextIndex.cpp */; };
+		C110A0E11D08481500D7AAD5 /* TestTextIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0E01D08481500D7AAD5 /* TestTextIndex.cpp */; };
+		C110A0E31D08551300D7AAD5 /* StudentInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0E21D08551300D7AAD5 /* StudentInstance.cpp */; };
+		C110A0E51D08556F00D7AAD5 /* BufferInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0E41D08556F00D7AAD5 /* BufferInstance.cpp */; };
 		C18F4EA41D0580990087FD9E /* function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C18F4EA31D0580990087FD9E /* function.cpp */; };
 		C18F4EA61D0595CD0087FD9E /* TestStudent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C18F4EA51D0595CD0087FD9E /* TestStudent.cpp */; };
 		C18F4EA91D05A27F0087FD9E /* DelimFieldBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C18F4EA81D05A27F0087FD9E /* DelimFieldBuffer.cpp */; };
@@ -38,6 +42,10 @@
 		C110A0D11D0809FE00D7AAD5 /* RecordFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecordFile.cpp; sourceTree = "<group>"; };
 		C110A0D31D080B6A00D7AAD5 /* TestRecordFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRecordFile.cpp; sourceTree = "<group>"; };
 		C110A0DD1D082C2A00D7AAD5 /* TextIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextIndex.h; sourceTree = "<group>"; };
+		C110A0DE1D083B1E00D7AAD5 /* TextIndex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextIndex.cpp; sourceTree = "<group>"; };
+		C110A0E01D08481500D7AAD5 /* TestTextIndex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestTextIndex.cpp; sourceTree = "<group>"; };
+		C110A0E21D08551300D7AAD5 /* StudentInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StudentInstance.cpp; sourceTree = "<group>"; };
+		C110A0E41D08556F00D7AAD5 /* BufferInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BufferInstance.cpp; sourceTree = "<group>"; };
 		C18F4EA31D0580990087FD9E /* function.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = function.cpp; sourceTree = "<group>"; };
 		C18F4EA51D0595CD0087FD9E /* TestStudent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestStudent.cpp; sourceTree = "<group>"; };
 		C18F4EA71D0597CD0087FD9E /* DelimFieldBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelimFieldBuffer.h; sourceTree = "<group>"; };
@@ -77,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				C110A0DD1D082C2A00D7AAD5 /* TextIndex.h */,
+				C110A0DE1D083B1E00D7AAD5 /* TextIndex.cpp */,
+				C110A0E01D08481500D7AAD5 /* TestTextIndex.cpp */,
 			);
 			name = TextIndex;
 			sourceTree = "<group>";
@@ -165,6 +175,8 @@
 				C1EC4CB11D057DA80043EE27 /* main.cpp */,
 				C1EC4CBA1D057EC00043EE27 /* classType.h */,
 				C18F4EA31D0580990087FD9E /* function.cpp */,
+				C110A0E21D08551300D7AAD5 /* StudentInstance.cpp */,
+				C110A0E41D08556F00D7AAD5 /* BufferInstance.cpp */,
 			);
 			path = FileStructure5;
 			sourceTree = "<group>";
@@ -247,13 +259,17 @@
 				C110A0D01D074B9C00D7AAD5 /* TestBufferFile.cpp in Sources */,
 				C1EC4CB21D057DA80043EE27 /* main.cpp in Sources */,
 				C18F4EAE1D05CA650087FD9E /* BufferFile.cpp in Sources */,
+				C110A0E11D08481500D7AAD5 /* TestTextIndex.cpp in Sources */,
 				C1EC4CBE1D057F330043EE27 /* Student.cpp in Sources */,
 				C1EC4CC11D057FF20043EE27 /* IOBuffer.cpp in Sources */,
 				C110A0D41D080B6A00D7AAD5 /* TestRecordFile.cpp in Sources */,
 				C18F4EA41D0580990087FD9E /* function.cpp in Sources */,
+				C110A0DF1D083B1E00D7AAD5 /* TextIndex.cpp in Sources */,
 				C110A0D21D0809FE00D7AAD5 /* RecordFile.cpp in Sources */,
+				C110A0E51D08556F00D7AAD5 /* BufferInstance.cpp in Sources */,
 				C1EC4CC31D0580430043EE27 /* FixedFieldBuffer.cpp in Sources */,
 				C18F4EA61D0595CD0087FD9E /* TestStudent.cpp in Sources */,
+				C110A0E31D08551300D7AAD5 /* StudentInstance.cpp in Sources */,
 				C18F4EA91D05A27F0087FD9E /* DelimFieldBuffer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

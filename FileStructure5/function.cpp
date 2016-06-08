@@ -1,11 +1,11 @@
 #include <cstdio>
 #include <iostream>
-
+#include <cassert>
 
 using namespace std;
 
 // util function
-//수를 문자열로 바꿔줌
+/* 수를 문자열로 바꿔줌 */
 char* intToString(int number) {
     const int VolumeOfNumber = 11;
     char* returnString = new char[VolumeOfNumber];
@@ -15,7 +15,7 @@ char* intToString(int number) {
     
     return returnString;
 }
-// 잠시 멈춤
+/* 잠시 멈춤 */
 void stop() {
     const int MaxBufferSize = 1024;
     char buffer[MaxBufferSize];
