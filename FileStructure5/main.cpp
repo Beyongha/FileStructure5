@@ -22,9 +22,15 @@ void FFBBufferFileLoadStudentInstance();
 void DFBBufferFileSaveStudentInstance();
 void DFBBufferFileLoadStudentInstance();
 
+
+/* RecordFile Test using Student instances */
+void FFBRecordFileSaveStudentInstance();
+void FFBRecordFileLoadStudentInstance();
+
+
+void DFBRecordFileSaveStudentInstance();
+void DFBRecordFileLoadStudentInstance();
+
 int main() {
-    cout << "Hello!" << endl;
-    FFBBufferFileSaveStudentInstance();
-    
-    FFBBufferFileLoadStudentInstance();
+    cout << "Main" << endl;
 }

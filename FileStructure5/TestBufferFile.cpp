@@ -25,7 +25,7 @@ Student s4 = Student();
 Student s5 = Student();
 Student s6 = Student();
 
-const char* fileName = "student.txt";
+const char* fileName1 = "student.txt";
 
 void FFBBufferFileSaveStudentInstance() {
     FixedFieldBuffer fb(StudentFieldSize, NUMOFSTUDENTMEMBER * 3);
@@ -34,7 +34,7 @@ void FFBBufferFileSaveStudentInstance() {
     s3.Pack(fb);
     
     BufferFile bufferFile(fb);
-    bufferFile.Create(fileName);
+    bufferFile.Create(fileName1);
     bufferFile.Append();
     bufferFile.Close();
 }
@@ -42,7 +42,7 @@ void FFBBufferFileSaveStudentInstance() {
 void FFBBufferFileLoadStudentInstance() {
     FixedFieldBuffer fb;
     BufferFile bufferFile(fb);
-    bufferFile.Open(fileName);
+    bufferFile.Open(fileName1);
     bufferFile.Read();
     
     s4.Unpack(fb);
@@ -62,7 +62,7 @@ void DFBBufferFileSaveStudentInstance() {
     s3.Pack(db);
     
     BufferFile bufferFile(db);
-    bufferFile.Create(fileName);
+    bufferFile.Create(fileName1);
     bufferFile.Append();
     bufferFile.Close();
 }
@@ -70,7 +70,7 @@ void DFBBufferFileSaveStudentInstance() {
 void DFBBufferFileLoadStudentInstance() {
     DelimFieldBuffer db;
     BufferFile bufferFile(db);
-    bufferFile.Open(fileName);
+    bufferFile.Open(fileName1);
     bufferFile.Read();
     
     s4.Unpack(db);

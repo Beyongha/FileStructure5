@@ -3,7 +3,7 @@
 
 #include "Buffer.h"
 #include "classType.h"
-
+#include "Student.h"
 
 #include <iostream>
 #include <fstream>
