@@ -1,7 +1,7 @@
 #ifndef RecordFile_h
 #define RecordFile_h
 
-#include "Buffer.h"
+#include "IOBuffer.h"
 #include "BufferFile.h"
 #include "classType.h"
 #include "Student.h"

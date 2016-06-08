@@ -1,7 +1,7 @@
 #ifndef DelimFieldBuffer_h
 #define DelimFieldBuffer_h
 
-#include "Buffer.h"
+#include "IOBuffer.h"
 #include "classType.h"
 
 #include <iostream>

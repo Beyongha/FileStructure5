@@ -1,4 +1,4 @@
-#include "Buffer.h"
+#include "IOBuffer.h"
 #include "BufferFile.h"
 #include "RecordFile.h"
 #include "classType.h"

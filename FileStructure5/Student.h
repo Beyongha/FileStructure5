@@ -11,11 +11,8 @@
 
 
 #include "classType.h"
-#include "Buffer.h"
+#include "IOBuffer.h"
 
-#include <cstdio>
-#include <cstring>
-#include <cstdlib>
 #include <iostream>
 
 

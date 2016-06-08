@@ -1,5 +1,5 @@
 #include "classType.h"
-#include "Buffer.h"
+#include "IOBuffer.h"
 
 #include <iostream>
 #include <cstdio>

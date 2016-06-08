@@ -1,4 +1,5 @@
 #include "Student.h"
+#include "IOBuffer.h"
 
 #include <iostream>
 #include <fstream>

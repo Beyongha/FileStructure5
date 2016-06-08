@@ -2,7 +2,7 @@
 #define FixedFieldBuffer_h
 
 
-#include "Buffer.h"
+#include "IOBuffer.h"
 #include "classType.h"
 
 #include <iostream>
