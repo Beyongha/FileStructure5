@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7945C2BA1D098BDF0071C8EB /* TextIndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7945C2B91D098BDF0071C8EB /* TextIndexBuffer.cpp */; };
+		7945C2BC1D098E3A0071C8EB /* TestTextIndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7945C2BB1D098E3A0071C8EB /* TestTextIndexBuffer.cpp */; };
+		7945C2BF1D0999980071C8EB /* TextIndexInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7945C2BD1D0999980071C8EB /* TextIndexInstance.cpp */; };
+		7945C2C11D09B2140071C8EB /* TestTextIndexedFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7945C2C01D09B2140071C8EB /* TestTextIndexedFile.cpp */; };
+		7945C2C31D0AC4180071C8EB /* TextIndexedFileInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7945C2C21D0AC4180071C8EB /* TextIndexedFileInstance.cpp */; };
 		C110A0D01D074B9C00D7AAD5 /* TestBufferFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0CF1D074B9C00D7AAD5 /* TestBufferFile.cpp */; };
-		C110A0D21D0809FE00D7AAD5 /* RecordFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0D11D0809FE00D7AAD5 /* RecordFile.cpp */; };
 		C110A0D41D080B6A00D7AAD5 /* TestRecordFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0D31D080B6A00D7AAD5 /* TestRecordFile.cpp */; };
 		C110A0DF1D083B1E00D7AAD5 /* TextIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0DE1D083B1E00D7AAD5 /* TextIndex.cpp */; };
 		C110A0E11D08481500D7AAD5 /* TestTextIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C110A0E01D08481500D7AAD5 /* TestTextIndex.cpp */; };
@@ -37,9 +41,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7945C2B61D098AAF0071C8EB /* TextIndexedFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextIndexedFile.h; sourceTree = "<group>"; };
+		7945C2B81D098B1E0071C8EB /* TextIndexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextIndexBuffer.h; sourceTree = "<group>"; };
+		7945C2B91D098BDF0071C8EB /* TextIndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextIndexBuffer.cpp; sourceTree = "<group>"; };
+		7945C2BB1D098E3A0071C8EB /* TestTextIndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestTextIndexBuffer.cpp; sourceTree = "<group>"; };
+		7945C2BD1D0999980071C8EB /* TextIndexInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextIndexInstance.cpp; sourceTree = "<group>"; };
+		7945C2C01D09B2140071C8EB /* TestTextIndexedFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = TestTextIndexedFile.cpp; sourceTree = "<group>"; };
+		7945C2C21D0AC4180071C8EB /* TextIndexedFileInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextIndexedFileInstance.cpp; sourceTree = "<group>"; };
 		79F7B4531D069A44005156D6 /* RecordFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordFile.h; sourceTree = "<group>"; };
 		C110A0CF1D074B9C00D7AAD5 /* TestBufferFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestBufferFile.cpp; sourceTree = "<group>"; };
-		C110A0D11D0809FE00D7AAD5 /* RecordFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecordFile.cpp; sourceTree = "<group>"; };
 		C110A0D31D080B6A00D7AAD5 /* TestRecordFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRecordFile.cpp; sourceTree = "<group>"; };
 		C110A0DD1D082C2A00D7AAD5 /* TextIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextIndex.h; sourceTree = "<group>"; };
 		C110A0DE1D083B1E00D7AAD5 /* TextIndex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextIndex.cpp; sourceTree = "<group>"; };
@@ -74,9 +84,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7945C2B71D098AFE0071C8EB /* TextIndexBuffer */ = {
+			isa = PBXGroup;
+			children = (
+				7945C2B81D098B1E0071C8EB /* TextIndexBuffer.h */,
+				7945C2B91D098BDF0071C8EB /* TextIndexBuffer.cpp */,
+				7945C2BB1D098E3A0071C8EB /* TestTextIndexBuffer.cpp */,
+			);
+			name = TextIndexBuffer;
+			sourceTree = "<group>";
+		};
 		C110A0D51D0828D400D7AAD5 /* TextIndexedFile */ = {
 			isa = PBXGroup;
 			children = (
+				7945C2B61D098AAF0071C8EB /* TextIndexedFile.h */,
+				7945C2C01D09B2140071C8EB /* TestTextIndexedFile.cpp */,
 			);
 			name = TextIndexedFile;
 			sourceTree = "<group>";
@@ -113,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				79F7B4531D069A44005156D6 /* RecordFile.h */,
-				C110A0D11D0809FE00D7AAD5 /* RecordFile.cpp */,
 				C110A0D31D080B6A00D7AAD5 /* TestRecordFile.cpp */,
 			);
 			name = RecordFile;
@@ -122,6 +143,7 @@
 		C110A0DA1D082B2200D7AAD5 /* Buffer */ = {
 			isa = PBXGroup;
 			children = (
+				7945C2B71D098AFE0071C8EB /* TextIndexBuffer */,
 				C110A0D71D08294900D7AAD5 /* FixedFieldBuffer */,
 				C110A0D81D08295A00D7AAD5 /* DelimFieldBuffer */,
 				C1EC4CB81D057E3A0043EE27 /* IOBuffer */,
@@ -177,6 +199,8 @@
 				C18F4EA31D0580990087FD9E /* function.cpp */,
 				C110A0E21D08551300D7AAD5 /* StudentInstance.cpp */,
 				C110A0E41D08556F00D7AAD5 /* BufferInstance.cpp */,
+				7945C2BD1D0999980071C8EB /* TextIndexInstance.cpp */,
+				7945C2C21D0AC4180071C8EB /* TextIndexedFileInstance.cpp */,
 			);
 			path = FileStructure5;
 			sourceTree = "<group>";
@@ -260,14 +284,18 @@
 				C1EC4CB21D057DA80043EE27 /* main.cpp in Sources */,
 				C18F4EAE1D05CA650087FD9E /* BufferFile.cpp in Sources */,
 				C110A0E11D08481500D7AAD5 /* TestTextIndex.cpp in Sources */,
+				7945C2C11D09B2140071C8EB /* TestTextIndexedFile.cpp in Sources */,
 				C1EC4CBE1D057F330043EE27 /* Student.cpp in Sources */,
+				7945C2BC1D098E3A0071C8EB /* TestTextIndexBuffer.cpp in Sources */,
 				C1EC4CC11D057FF20043EE27 /* IOBuffer.cpp in Sources */,
 				C110A0D41D080B6A00D7AAD5 /* TestRecordFile.cpp in Sources */,
 				C18F4EA41D0580990087FD9E /* function.cpp in Sources */,
 				C110A0DF1D083B1E00D7AAD5 /* TextIndex.cpp in Sources */,
-				C110A0D21D0809FE00D7AAD5 /* RecordFile.cpp in Sources */,
 				C110A0E51D08556F00D7AAD5 /* BufferInstance.cpp in Sources */,
+				7945C2BF1D0999980071C8EB /* TextIndexInstance.cpp in Sources */,
+				7945C2BA1D098BDF0071C8EB /* TextIndexBuffer.cpp in Sources */,
 				C1EC4CC31D0580430043EE27 /* FixedFieldBuffer.cpp in Sources */,
+				7945C2C31D0AC4180071C8EB /* TextIndexedFileInstance.cpp in Sources */,
 				C18F4EA61D0595CD0087FD9E /* TestStudent.cpp in Sources */,
 				C110A0E31D08551300D7AAD5 /* StudentInstance.cpp in Sources */,
 				C18F4EA91D05A27F0087FD9E /* DelimFieldBuffer.cpp in Sources */,

@@ -67,10 +67,11 @@ public:
     
     
     /* Pack and Unpack */
-    int Pack(IOBuffer& _IOBuffer);
-    int Unpack(IOBuffer& _IOBuffer);
+    int Pack(IOBuffer&);
+    int Unpack(IOBuffer&);
     
-    
+    int DPack(IOBuffer&);
+    int DUnpack(IOBuffer&);
     
     /* Getter */
     const char* GetStudentID() const;
@@ -78,6 +79,7 @@ public:
     const char* GetAddress() const;
     const int GetAdmissionYear() const;
     const int GetCredit() const;
+    const char* Key() const;
     
     /* Class Type */
     ClassType GetClassType();

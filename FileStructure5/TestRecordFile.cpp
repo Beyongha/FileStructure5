@@ -10,26 +10,31 @@
 
 using namespace std;
 
+/* instancaes in StudentInstance.cpp */
+extern Student std1;
+extern Student std2;
+extern Student std3;
 
-Student S1 = Student("201424546", "JIN", "geyongnam", 14, 85);
-Student S2 = Student("111122222", "HA", "pusan", 11, 112);
-Student S3 = Student("123453213", "LEE", "geumjung", 12, 123);
+extern Student std4;
+extern Student std5;
+extern Student std6;
 
-Student S4 = Student();
-Student S5 = Student();
-Student S6 = Student();
+/* instancaes in BufferInstance.cpp */
+extern FixedFieldBuffer fb;
+extern DelimFieldBuffer db;
 
-const char* fileName2 = "student.txt";
+
+extern char* fileName1;
 
 
 void FFBRecordFileSaveStudentInstance() {
     FixedFieldBuffer fb(StudentFieldSize, NUMOFSTUDENTMEMBER * 3);
     
     RecordFile<Student> recordFile(fb);
-    recordFile.Create(fileName2);
-    recordFile.Append(S1);
-    recordFile.Append(S2);
-    recordFile.Append(S3);
+    recordFile.Create(fileName1);
+    recordFile.Append(std1);
+    recordFile.Append(std2);
+    recordFile.Append(std3);
     
     recordFile.Close();
 }
@@ -39,15 +44,15 @@ void FFBRecordFileLoadStudentInstance() {
     FixedFieldBuffer fb;
     
     RecordFile<Student> recordFile(fb);
-    recordFile.Open(fileName2);
+    recordFile.Open(fileName1);
     
-    recordFile.Read(S4);
-    recordFile.Read(S5);
-    recordFile.Read(S6);
+    recordFile.Read(std4);
+    recordFile.Read(std5);
+    recordFile.Read(std6);
     
-    cout << S4 << endl;
-    cout << S5 << endl;
-    cout << S6 << endl;
+    cout << std4 << endl;
+    cout << std5 << endl;
+    cout << std6 << endl;
 }
 
 
@@ -55,10 +60,10 @@ void DFBRecordFileSaveStudentInstance() {
     DelimFieldBuffer db(1024);
     
     RecordFile<Student> recordFile(db);
-    recordFile.Create(fileName2);
-    recordFile.Append(S1);
-    recordFile.Append(S2);
-    recordFile.Append(S3);
+    recordFile.Create(fileName1);
+    recordFile.Append(std1);
+    recordFile.Append(std2);
+    recordFile.Append(std3);
     
     recordFile.Close();
     
@@ -68,14 +73,14 @@ void DFBRecordFileLoadStudentInstance() {
     DelimFieldBuffer db;
     
     RecordFile<Student> recordFile(db);
-    recordFile.Open(fileName2);
+    recordFile.Open(fileName1);
     
-    recordFile.Read(S4);
-    recordFile.Read(S5);
-    recordFile.Read(S6);
+    recordFile.Read(std4);
+    recordFile.Read(std5);
+    recordFile.Read(std6);
     
-    cout << S4 << endl;
-    cout << S5 << endl;
-    cout << S6 << endl;
+    cout << std4 << endl;
+    cout << std5 << endl;
+    cout << std6 << endl;
 
 }

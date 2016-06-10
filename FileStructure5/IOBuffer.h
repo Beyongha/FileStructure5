@@ -18,6 +18,7 @@ protected:
     char* Buffer;           // 문자열 저장하는 버퍼
     int MaxSize;            // 버퍼의 최대 길이
     int Offset;             // pack의 오프셋.
+    int HeaderSize;
     
     /* Setter */
     void SetBuffer(int);                        // 버퍼를 설정

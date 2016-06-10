@@ -44,10 +44,11 @@ IOBuffer::IOBuffer(int _maxSize) {
     SetMaxSize(_maxSize);
     SetOffset(0);
     SetClassType(IOBUFFER);
-    
+    HeaderSize = 10;
 }
 IOBuffer::IOBuffer() {
     SetOffset(0);
+    HeaderSize = 10;
 }
 
 void IOBuffer::Clear() { this->Offset = 0; }
@@ -88,7 +89,7 @@ void IOBuffer::ValidateInput(const int MaxValue, const int Value) {
     assert((Value >= 0) && "Value is Zero");
     
     /* Check if MaxValue is valid */
-    assert((MaxValue > 0 ) && "MaxValue is Negative or Zero");
+    assert((MaxValue >= 0 ) && "MaxValue is Negative or Zero");
     
     /* Check if Value is smaller than MaxValue */
     assert((MaxValue >= Value) && "MaxValue is smaller than Value");

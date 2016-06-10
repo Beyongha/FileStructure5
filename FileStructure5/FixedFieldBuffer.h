@@ -59,6 +59,9 @@ public:
     int GetFieldSize();
     int GetMaxNumberOfField();
     
+    /* Method */
+    void Print(ostream&);
+    
     
     /* Destuctor */
     ~FixedFieldBuffer();

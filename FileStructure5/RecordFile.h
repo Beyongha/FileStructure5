@@ -18,6 +18,7 @@ public:
     int Read(Record&, int Address = -1);
     int Write(Record&, int Address = -1);
     int Append(Record&);
+    int Close();
     
     ~RecordFile();
 };
@@ -28,8 +29,7 @@ RecordFile<Record>::RecordFile(IOBuffer& _buffer) : BufferFile(_buffer) {
 }
 template <class Record>
 int RecordFile<Record>::Read(Record& record, int Address) {
-    int result;
-    result = BufferFile::Read(Address);
+    BufferFile::Read(Address);
     
     return record.Unpack(Buffer);
 }
@@ -43,9 +43,19 @@ int RecordFile<Record>::Write(Record& record, int Address) {
 
 template <class Record>
 int RecordFile<Record>::Append(Record& record) {
-    record.Pack(Buffer);
-    return BufferFile::Append();
+    int ref;
+    ref = record.Pack(Buffer);
+    
+    return ref;
 }
+
+template <class Record>
+int RecordFile<Record>::Close() {
+    BufferFile::Append();
+    BufferFile::Close();
+    return 1;
+}
+
 template <class Record>
 RecordFile<Record>::~RecordFile() { }
 

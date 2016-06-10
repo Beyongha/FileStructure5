@@ -19,27 +19,28 @@ extern Student std6;
 extern FixedFieldBuffer fb;
 extern DelimFieldBuffer db;
 
+
+/* instance in TextIndexInstance.cpp */
+extern TextIndex textIndex;
+
 using namespace std;
 
-
-
 void FFBTestTextIndex() {
-    TextIndex textIndex(100, 1);
-    
-    
-    // Student 가 Pack할 때 자기 위치를 return 하도록 개선하자.
     /* Insert test */
-    std1.Pack(fb);
-    textIndex.Insert(std1.GetName(), fb.GetFieldSize() * NUMOFSTUDENTMEMBER);
+    int savedAddress = std1.Pack(fb);
+    textIndex.Insert(std1.GetName(), savedAddress);
     textIndex.Print(cout);
     
-    std2.Pack(fb);
-    textIndex.Insert(std2.GetName(), fb.GetFieldSize() * NUMOFSTUDENTMEMBER * 2);
+    savedAddress = std2.Pack(fb);
+    textIndex.Insert(std2.GetName(), savedAddress);
     textIndex.Print(cout);
     
-    std3.Pack(fb);
-    textIndex.Insert(std3.GetName(), fb.GetFieldSize() * NUMOFSTUDENTMEMBER * 3);
+    savedAddress = std3.Pack(fb);
+    textIndex.Insert(std3.GetName(), savedAddress);
     textIndex.Print(cout);
+    
+    /* 버퍼값 조사 */
+    fb.Write(cout);
     
     /* Search Test */
     cout << textIndex.Search(std2.GetName()) << endl;
@@ -51,5 +52,8 @@ void FFBTestTextIndex() {
     
     textIndex.Remove(std1.GetName());
     textIndex.Print(cout);
-    
+}
+
+void DFBTestTextIndex() {
+    // 구현...
 }

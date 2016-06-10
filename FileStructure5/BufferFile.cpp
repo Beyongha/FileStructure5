@@ -60,7 +60,7 @@ int BufferFile::Close() {
     }
     else return 0;
 }
-int BufferFile::rewind() {
+int BufferFile::Rewind() {
     IsFileOpened(File);
     
     File.seekp(0, ios::beg);
@@ -77,7 +77,7 @@ int BufferFile::Read(int Address) {
     IsFileOpened(File);
     if( Address == -1 ) {
         Buffer.Read(File);
-        return -1;
+        return 0;
     } else {
         Buffer.DRead(File, Address);
         return Address;
@@ -98,6 +98,7 @@ int BufferFile::Append() {
     
     /* 버퍼에 있는 것들을 file에 씀 */
     Buffer.Write(File);
+    //Buffer.Clear();
     return 1;
 }
 
@@ -110,7 +111,7 @@ int BufferFile::IsFileOpened(fstream& File) {
 }
 
 
-const IOBuffer& BufferFile::GetBuffer() const {
+IOBuffer& BufferFile::GetBuffer() {
     return this->Buffer;
 }
 const char* BufferFile::GetFileName() const {
@@ -120,5 +121,6 @@ const ClassType BufferFile::GetClassType() const {
     return this->classType;
 }
 
+fstream& BufferFile::GetFile() { return this->File; }
 
 BufferFile::~BufferFile() { }

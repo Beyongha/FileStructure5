@@ -15,23 +15,26 @@
 #include <fstream>
 
 using namespace std;
+/* instancaes in StudentInstance.cpp */
+extern Student std1;
+extern Student std2;
+extern Student std3;
 
+extern Student std4;
+extern Student std5;
+extern Student std6;
 
-Student s1 = Student("201424546", "JIN", "geyongnam", 14, 85);
-Student s2 = Student("111122222", "HA", "pusan", 11, 112);
-Student s3 = Student("123453213", "LEE", "geumjung", 12, 123);
+/* instancaes in BufferInstance.cpp */
+extern FixedFieldBuffer fb;
+extern DelimFieldBuffer db;
 
-Student s4 = Student();
-Student s5 = Student();
-Student s6 = Student();
-
-const char* fileName1 = "student.txt";
+extern char* fileName1;
 
 void FFBBufferFileSaveStudentInstance() {
     FixedFieldBuffer fb(StudentFieldSize, NUMOFSTUDENTMEMBER * 3);
-    s1.Pack(fb);
-    s2.Pack(fb);
-    s3.Pack(fb);
+    std1.Pack(fb);
+    std2.Pack(fb);
+    std3.Pack(fb);
     
     BufferFile bufferFile(fb);
     bufferFile.Create(fileName1);
@@ -45,21 +48,21 @@ void FFBBufferFileLoadStudentInstance() {
     bufferFile.Open(fileName1);
     bufferFile.Read();
     
-    s4.Unpack(fb);
-    s5.Unpack(fb);
-    s6.Unpack(fb);
+    std4.Unpack(fb);
+    std5.Unpack(fb);
+    std6.Unpack(fb);
     
-    cout << s4 << endl;
-    cout << s5 << endl;
-    cout << s6 << endl;
+    cout << std4 << endl;
+    cout << std5 << endl;
+    cout << std6 << endl;
 }
 
 
 void DFBBufferFileSaveStudentInstance() {
     DelimFieldBuffer db(1024);
-    s1.Pack(db);
-    s2.Pack(db);
-    s3.Pack(db);
+    std1.Pack(db);
+    std2.Pack(db);
+    std3.Pack(db);
     
     BufferFile bufferFile(db);
     bufferFile.Create(fileName1);
@@ -73,11 +76,11 @@ void DFBBufferFileLoadStudentInstance() {
     bufferFile.Open(fileName1);
     bufferFile.Read();
     
-    s4.Unpack(db);
-    s5.Unpack(db);
-    s6.Unpack(db);
+    std4.Unpack(db);
+    std5.Unpack(db);
+    std6.Unpack(db);
     
-    cout << s4 << endl;
-    cout << s5 << endl;
-    cout << s6 << endl;
+    cout << std4 << endl;
+    cout << std5 << endl;
+    cout << std6 << endl;
 }

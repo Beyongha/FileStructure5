@@ -17,10 +17,24 @@
 
 /* Private methods */
 int TextIndex::Find(const string& key) const {
+    /* Binary Search */
+    int start = 0, end = NumKeys -1;
+    int mid = (start + end) / 2;
+    
+    for(; start <= end; mid = (start + end ) / 2) {
+        if( key == Keys[mid]) return mid;
+        else if( Keys[mid] > key) end = mid -1;
+        else start = mid + 1;
+    }
+    
+    
+    /* Linear Search
     for( int i = 0; i < NumKeys; ++ i ) {
         if( Keys[i] == key) return i;       // Key found
     }
+     */
     return -1;      // Not found
+     
 }
 int TextIndex::Init(int maxKeys, int unique) {
     ValidateInput(maxKeys);
@@ -63,8 +77,6 @@ void TextIndex::SetUnique(int _unique) {
 void TextIndex::SetClassType(ClassType _classType) {
     this->classType = _classType;
 }
-
-    
 
 TextIndex::TextIndex(int _maxKeys, int _unique){
     Init(_maxKeys, _unique);
@@ -133,7 +145,7 @@ int TextIndex::Remove(const string key) {
 }
 int TextIndex::Search(const string key) {
     int index = Find(key);
-    if( index < 0) return 0;
+    if( index < 0) return -1;
     return Addresses[index];
 }
 void TextIndex::Print(ostream& os) const {

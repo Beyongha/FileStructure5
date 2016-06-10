@@ -19,6 +19,11 @@ char* intToString(int number) {
 void stop() {
     const int MaxBufferSize = 1024;
     char buffer[MaxBufferSize];
-    cout << "계속하려면 아무 키나 누르십시오." << endl;
+    cout << "계속하려면 아무 키나 입력하고 엔터키를 누르십시오.(ex, a(enter)" << endl;
     cin >> buffer;
+    
+    if( strlen(buffer) > MaxBufferSize){
+        cout << "Buffer Overflow Attack Occured" << endl;
+    }
+    buffer[MaxBufferSize-1] = '\0';
 }

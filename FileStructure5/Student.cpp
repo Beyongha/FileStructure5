@@ -150,14 +150,14 @@ void Student::ValidateInput(const int MaxValue, const int Value) {
 
 /* Pack and Unpack */
 int Student::Pack    (IOBuffer& _IOBuffer) {
-    int result = 1;
-    result &= _IOBuffer.Pack(this->StudentID);
-    result &= _IOBuffer.Pack(this->Name);
-    result &= _IOBuffer.Pack(this->Address);
-    result &= _IOBuffer.Pack(this->AdmissionYear);
-    result &= _IOBuffer.Pack(this->Credit);
+    int savedAddress = _IOBuffer.GetOffset();
+    _IOBuffer.Pack(this->StudentID);
+    _IOBuffer.Pack(this->Name);
+    _IOBuffer.Pack(this->Address);
+    _IOBuffer.Pack(this->AdmissionYear);
+    _IOBuffer.Pack(this->Credit);
     
-    return result;
+    return savedAddress;
 }
 int Student::Unpack  (IOBuffer& _IOBuffer) {
     int result = 1;
@@ -176,7 +176,7 @@ const char* Student::GetName()       const { return this->Name; }
 const char* Student::GetAddress()    const { return this->Address; }
 const int Student::GetAdmissionYear()  const { return this->AdmissionYear; }
 const int Student::GetCredit()         const { return this->Credit; }
-
+const char* Student::Key() const { return GetName(); }
 /* Class type */
 ClassType Student::GetClassType() { return this->classType; }
 

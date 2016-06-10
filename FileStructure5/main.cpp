@@ -33,7 +33,28 @@ void DFBRecordFileLoadStudentInstance();
 /* TextIndex test using Student instances */
 void FFBTestTextIndex();
 
+/* TextIndexBuffer test using Student instances */
+void TestPackTextIndexBuffer();
+void TestUnpackTextIndexBuffer();
+
+
+/* TestTextIndexedFile test using Student instances */
+void TestSaveTextIndexedFile1();
+void TestSaveTextIndexedFile2();
+void TestLoadTextIndexedFile1();
+void TestLoadTextIndexedFile2();
+void TestSearchTextIndexedFile();
+
+const char* fileName1 = "TestTextIndexedFile1";
+const char* fileName2 = "TestTextIndexedFile2";
 
 int main() {
-    FFBTestTextIndex();
+    
+    TestSaveTextIndexedFile1();
+    TestSaveTextIndexedFile2();
+    
+    TestLoadTextIndexedFile1();
+    TestLoadTextIndexedFile2();
+    
+    TestSearchTextIndexedFile();
 }

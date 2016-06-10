@@ -122,7 +122,9 @@ void DelimFieldBuffer::DWrite(ostream& os, int Address) {
 }
 void DelimFieldBuffer::DRead(istream& is, int Address) {
     ValidateInput(MaxSize, Address);
-    is.read(this->Buffer + Address, this->MaxSize - Address);
+    is.seekg(Address + HeaderSize);
+    
+    is.read(this->Buffer, this->MaxSize - Address);
 }
 
 
