@@ -1,5 +1,5 @@
 #include "TextIndexBuffer.h"
-#include "classtype.h"
+#include "classType.h"
 
 #include <cstring>
 #include <cstdio>

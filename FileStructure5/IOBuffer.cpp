@@ -5,6 +5,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cassert>
+#include <cstring>
 
 using namespace std;
 /*

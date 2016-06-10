@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <iostream>
 #include <cassert>
-
+#include <cstring>
 using namespace std;
 
 // util function

@@ -179,5 +179,5 @@ int FixedFieldBuffer::GetMaxNumberOfField(){ return this->MaxNumberOfField; }
 
 
 FixedFieldBuffer::~FixedFieldBuffer(){
-    IOBuffer::~IOBuffer();
+    
 }
